@@ -1,0 +1,44 @@
+// main
+$fontFamily: "Circe";
+$fontSize: 14;
+$minWidth: 320;
+$maxWidth: 1920;
+$contentWidth: 1140;
+$containerOffset: 15;
+$containerWidth: calc($contentWidth + ($containerOffset * 2));
+
+
+
+// main colors
+$bodyColor: #fff;
+$mainColor: #444; // Цвет шрифта по умолчанию
+
+
+// additional colors
+$blackColor: #000;
+$whiteColor: #fff;
+$greenColor: #1dc46c;
+$tropazColor: #23538a;
+$tropazSecondaryColor: #325f93;
+
+
+
+// others vars
+$transitionSpeed: 0.3s;
+$transitionFunction: ease-in-out;
+
+
+
+
+
+
+
+// break points
+$desktop: $containerWidth+px;
+$bigTablet: 1150px;
+$tablet: 1024px;
+$smallTablet: 768px;
+$mobile: 576px;
+
+
+

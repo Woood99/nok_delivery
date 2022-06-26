@@ -1,0 +1,119 @@
+.become-partner {
+
+    &__title {
+        color: $tropazSecondaryColor;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: math.div(45, 36);
+
+        @media (max-width:$smallTablet) {
+            font-size: 28px;
+        }
+    }
+
+    &__descr {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: math.div(21, 14);
+
+        p:last-child {
+            margin-top: 25px;
+
+            @media (max-width:$smallTablet) {
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width:$smallTablet) {
+            font-size: 13px;
+            margin-top: 15px;
+        }
+    }
+
+    &__plans {
+        margin-top: 15px;
+    }
+
+    &__btns {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+
+        @media (max-width:$smallTablet) {
+            flex-direction: column;
+            margin-top: 30px;
+        }
+    }
+
+    &__btn {
+        @media (max-width:$smallTablet) {
+            padding: 14px 19px 13px;
+            &:nth-child(1) {
+                order: 2;
+            }
+
+            &:nth-child(2) {
+                order: 1;
+            }
+        }
+    }
+}
+
+.become-partner-plans {
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: math.div(22, 18);
+        color: #2BC36F;
+
+        @media (max-width:$smallTablet) {
+            font-size: 16px;
+        }
+
+        @media (max-width:$mobile) {
+            font-size: 15px;
+        }
+    }
+
+    &__list {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 25px;
+
+        @media (max-width:$smallTablet) {
+            grid-gap: 15px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        gap: 12px;
+    }
+
+    &__number {
+        flex: 0 0 25px;
+        background-color: #25A18E;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: math.div(20, 13);
+        color: $whiteColor;
+        padding-top: 1px;
+    }
+
+    &__descr {
+        font-size: 14px;
+        line-height: math.div(20, 14);
+
+        @media (max-width:$smallTablet) {
+            font-size: 13px;
+        }
+    }
+}

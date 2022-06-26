@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+"title": "Главная"
+})
+
+<body class="page__body">
+    <div class="site-container">
+        <div class="top-bg" style="background-image: url(img/top-bg.png);">
+            @include('partials/header.html')
+            @include('partials/hero.html')
+        </div>
+        <main class="main">
+            @include('partials/our-advantages.html')
+            @include('partials/application-description.html')
+            @include('partials/our-advantages_two.html')
+            @include('partials/product-categories.html')
+            @include('partials/express-courier.html')
+            @include('partials/steps-to-order.html')
+            @include('partials/download-app.html')
+            @include('partials/information.html')
+            @include('partials/our-contacts.html')
+        </main>
+        @include('partials/footer.html')
+    </div>
+    @include('partials/popup.html')
+</body>
+
+
+</html>

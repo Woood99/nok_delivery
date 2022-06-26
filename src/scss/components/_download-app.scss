@@ -1,0 +1,199 @@
+.download-app {
+    padding: 80px 0;
+
+    @media (max-width:$smallTablet) {
+        padding: 40px 0;
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 45px;
+        line-height: math.div(50, 45);
+
+        span {
+            color: $tropazSecondaryColor;
+        }
+
+        @media (max-width:$smallTablet) {
+            font-size: 30px;
+        }
+    }
+
+    &__inner {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 75px;
+
+        @media (max-width:$tablet) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0;
+            position: relative;
+            padding-top: 25%;
+        }
+
+        @media (max-width:$smallTablet) {
+            padding-top: 40%;
+        }
+
+        @media (max-width:$mobile) {
+            padding-top: 60%;
+        }
+    }
+
+    &__img {
+        z-index: -1;
+
+        img {
+            display: block;
+            filter: drop-shadow(22.0631px 17.1602px 22.8802px rgba(0, 0, 0, 0.09));
+        }
+
+        @media (max-width:$tablet) {
+            order: 1;
+            position: absolute;
+            top: 0;
+        }
+
+        @media (max-width:$mobile) {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.download-app-block {
+    @media (max-width:$tablet) {
+        background-color: $whiteColor;
+        padding: 16px 10px;
+    }
+
+    &--left {
+        @media (max-width:$tablet) {
+            order: 2;
+            padding-top: 25px;
+        }
+    }
+
+    &--right {
+        @media (max-width:$tablet) {
+            order: 3;
+        }
+
+        @media (min-width:$tablet) {
+            .download-app-block {
+
+                &__title {
+                    text-align: right;
+                }
+
+                &__item {
+                    flex-direction: row-reverse;
+                }
+
+                &__descr {
+                    text-align: right;
+                    margin-left: 0;
+                    margin-right: 9px;
+                }
+
+                &__btn {
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+
+    &__title {
+        color: #2BC36F;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: math.div(30, 22);
+
+        @media (max-width:$mobile) {
+            text-align: center;
+            font-size: 18px;
+        }
+    }
+
+    &__list {
+        margin-top: 16px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+            margin-top: 16px;
+        }
+    }
+
+    &__number {
+        flex: 0 0 35px;
+        background-color: $tropazSecondaryColor;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: math.div(14, 14);
+        color: $whiteColor;
+    }
+
+    &__descr {
+        margin-left: 9px;
+        font-size: 14px;
+        line-height: math.div(20, 14);
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__btn {
+        margin-top: 20px;
+        border: none;
+
+        img {
+            display: block;
+        }
+
+        @media (max-width:$tablet) {
+            display: none;
+        }
+    }
+
+    &__btns {
+        @media (min-width:$tablet) {
+            display: none;
+        }
+
+        @media (max-width:$tablet) {
+            margin-top: 20px;
+            order: 4;
+            display: flex;
+            gap: 20px;
+
+            .download-app-block__btn {
+                display: block;
+                margin: 0;
+            }
+        }
+
+        @media (max-width:$mobile) {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

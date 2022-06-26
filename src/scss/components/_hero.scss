@@ -1,0 +1,123 @@
+.hero {
+    padding: 145px 0 290px;
+    overflow: hidden;
+    @media (max-width:$bigTablet) {
+        padding: 120px 0 0;
+     overflow: visible;
+    }
+
+    @media (max-width:$mobile) {
+        padding: 40px 0 0;
+        margin-bottom: 87px;
+    }
+
+    &__container {
+        position: relative;
+
+        @media (max-width:$bigTablet) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__inner {
+        color: $whiteColor;
+        max-width: 588px;
+
+        @media (max-width:$bigTablet) {
+            max-width: 100%;
+        }
+
+        @media (max-width:$mobile) {
+            order: 2;
+            color: $mainColor;
+            padding: 23px 27px 32px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0px 10px 25px rgba(38, 38, 38, 0.25);
+            backdrop-filter: blur(25px);
+            border-radius: 20px;
+            position: absolute;
+            bottom: -87px;
+            left: 15px;
+            right: 15px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 24px;
+        line-height: math.div(28, 24);
+
+        @media (max-width:$mobile) {
+            font-size: 14px;
+        }
+    }
+
+    &__title {
+        margin-top: 26px;
+        font-weight: 700;
+        font-size: 75px;
+        line-height: math.div(75, 75);
+
+        span {
+            color: $greenColor;
+        }
+
+        @media (max-width:$mobile) {
+            font-size: 30px;
+            margin-top: 8px;
+
+            span {
+                color: #325F93;
+            }
+        }
+    }
+
+    &__descr {
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: math.div(26, 16);
+
+        span {
+            font-weight: 700;
+        }
+
+        @media (max-width:$mobile) {
+            font-size: 14px;
+            margin-top: 3px;
+        }
+    }
+
+    &__btn {
+        margin-top: 30px;
+        padding: 18px 22px;
+
+        @media (max-width:$mobile) {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+
+    &__img {
+         position: absolute;
+        right: -60%;
+        top: 0;
+        width: 100%;
+        img {
+            display: block;
+        }
+
+        @media (max-width:$bigTablet) {
+            margin: 0 auto;
+            margin-top: 35px;
+            position: static;
+            width: auto;
+        }
+
+        @media (max-width:$mobile) {
+            margin-top: 0;
+            order: 1;
+            margin-left: calc(48px - 15px);
+            margin-bottom: 87px;
+        }
+    }
+}

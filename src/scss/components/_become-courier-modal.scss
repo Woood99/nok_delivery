@@ -1,0 +1,396 @@
+.become-courier {
+    &__content {}
+
+    &__top {}
+
+    &__middle {
+        margin-top: 30px;
+        @media (max-width:$smallTablet){
+             margin-top: 15px; 
+        }
+    }
+}
+
+.become-courier-top {
+
+    &__title {
+        color: $tropazSecondaryColor;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: math.div(36, 36);
+        @media (max-width:$smallTablet){
+             font-size: 30px; 
+        }
+    }
+
+    &__descr {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: math.div(18, 14);
+        @media (max-width:$smallTablet){
+             margin-top: 10px; 
+        }
+    }
+}
+
+.work-delivery {
+
+    &__title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: math.div(30, 30);
+
+        span {
+            color: $tropazSecondaryColor;
+        }
+        @media (max-width:$smallTablet){
+             font-size: 25px; 
+        }
+    }
+
+    &__element {
+        margin-top: 13px;
+    }
+
+    &__subtitle {
+        margin-bottom: 9px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: math.div(30, 18);
+        color: #2BC36F;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        width: calc(50% - 15px);
+        @media (max-width:$smallTablet){
+             width: 100%; 
+        }
+    }
+}
+
+.work-delivery-item {
+
+
+    &__icon {
+        flex: 0 0 20px;
+        height: 20px;
+        width: 20px;
+        border: 1px solid rgba(37, 161, 142, 0.2);
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            fill: #25A18E;
+            width: 19px;
+            height: 9px;
+            transform: rotate(180deg) translateX(-7px);
+        }
+    }
+
+    &__descr {
+        margin-left: 17px;
+        font-size: 14px;
+        line-height: math.div(20, 14);
+    }
+}
+
+
+.questionnaire {
+    margin-top: 35px;
+
+    &__title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: math.div(30, 30);
+
+        span {
+            color: $tropazSecondaryColor;
+        }
+        @media (max-width:$smallTablet){
+             font-size: 25px; 
+        }
+    }
+
+    &__form {
+        margin-top: 18px;
+    }
+    @media (max-width:$smallTablet){
+         margin-top: 25px; 
+    }
+}
+
+
+.questionnaire-form {
+    &__rows {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 23px;
+        @media (max-width:$tablet){
+            grid-template-columns: repeat(2,1fr);
+        }
+        @media (max-width:$smallTablet){
+             grid-template-columns: repeat(1,1fr); 
+             grid-gap: 18px;
+        }
+    }
+
+    &__label {
+        &--descr {
+            display: grid;
+            grid-template-columns: minmax(55px, 155px) max-content;
+            grid-column-gap: 9px;
+
+            .questionnaire-form {
+                &__name {
+                    grid-column: 1 / -1;
+                }
+
+                &__descr {
+                    align-self: center;
+                }
+            }
+        }
+    }
+    &__name {
+        display: block;
+        font-size: 14px;
+        line-height: math.div(20, 14);
+    }
+
+    &__input {
+        margin-top: 4px;
+        background-color: $whiteColor;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        height: 44px;
+        width: 100%;
+        padding: 0 20px 0 10px;
+
+        &:focus {
+            border: 1px solid $tropazSecondaryColor;
+            outline-color: $tropazSecondaryColor;
+        }
+    }
+    .just-validate-error-field{
+        border: 2px solid $tropazSecondaryColor;
+    }
+    &__option {
+
+        .options {
+            margin-top: 7px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            &__item {
+                position: relative;
+                cursor: pointer;
+
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                }
+
+                &:not(:first-child) {
+                    margin-left: 20px;
+                }
+            }
+
+            &__input {
+                width: 0;
+                height: 0;
+                opacity: 0;
+                position: absolute;
+
+                &:focus+.options__label:before {
+                    box-shadow: 0 0 5px #000;
+                }
+
+                &:checked+.options__label:before {}
+
+                &:checked+.options__label:after {
+                    transform: scale(1);
+                }
+            }
+
+            &__label {
+                display: inline-flex;
+                align-items: center;
+                cursor: pointer;
+                gap: 8px;
+
+                &:before {
+                    content: "";
+                    align-self: flex-start;
+                    width: 45px;
+                    height: 45px;
+                    flex: 0 0 45px;
+                    border-radius: 3px;
+                    border: 1px solid #eee;
+                }
+
+                &:after {
+                    content: "";
+                    transition: all 0.3s ease 0s;
+                    transform: scale(0);
+                    background-color: transparent;
+                    background-image: url('../img/check-mark.svg');
+                    width: 45px;
+                    height: 45px;
+                    background-position: center;
+                    background-size: 15px 15px;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                }
+            }
+
+            &__text {
+                font-size: 14px;
+                line-height: math.div(20, 14);
+            }
+        }
+
+    }
+
+    &__btns {
+        margin-right: 85px;
+        margin-top: 40px;
+        display: flex;
+        justify-content: flex-end;
+        @media (max-width:$tablet){
+            margin-right: 0;
+        }
+        @media (max-width:$tablet){
+            justify-content: center;
+        }
+    }
+}
+
+
+
+.custom-file {
+    cursor: pointer;
+
+    &__field {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+
+        &:focus+.custom-file__content {
+            background-color: $tropazSecondaryColor;
+            color: $whiteColor;
+
+            svg {
+                fill: $whiteColor;
+            }
+        }
+    }
+
+    &__content {
+        background-color: #F5F5F5;
+        border-radius: 150px;
+        width: 100%;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        line-height: math.div(20, 14);
+        transition: color $transitionSpeed $transitionFunction, background-color $transitionSpeed $transitionFunction;
+
+        svg {
+            width: 15px;
+            height: 15px;
+            fill: $tropazSecondaryColor;
+            transition: fill $transitionSpeed $transitionFunction;
+        }
+    }
+
+
+    &:hover {
+        .custom-file {
+            &__content {
+                background-color: $tropazSecondaryColor;
+                color: $whiteColor;
+
+                svg {
+                    fill: $whiteColor;
+                }
+            }
+        }
+    }
+}
+
+.custom-file--active+.custom-file__content {
+    background-color: $tropazSecondaryColor;
+    color: $whiteColor;
+
+    svg {
+        fill: $whiteColor;
+    }
+}
+
+
+
+
+.questionnaire-form-btns {
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        @media (max-width:$smallTablet){
+        width: 100%;
+        }
+    }
+
+    &__btn:nth-child(1) {
+        padding: 14px 60px 13px;
+        @media (max-width:$smallTablet){
+             width: 100%; 
+        }
+    }
+
+    &__btn:nth-child(2) {
+        border: none;
+        text-decoration: underline;
+        color: $tropazSecondaryColor;
+        font-size: 14px;
+        line-height: math.div(20, 14);
+        transition: color $transitionSpeed $transitionFunction;
+
+        &:hover {
+            color: $greenColor;
+        }
+
+        &:focus {
+            color: $greenColor;
+        }
+    }
+   &__btn{
+
+   }
+}

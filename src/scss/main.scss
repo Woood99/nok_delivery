@@ -1,0 +1,38 @@
+@use "sass:math";
+
+// global components
+@import "vars";
+@import "base";
+@import "mixins";
+@import "fonts";
+@import "settings";
+@import "common";
+
+
+// big components
+@import "./components/header";
+@import "./components/hero";
+@import "./components/our-advantages";
+@import "./components/application-description";
+@import "./components/our-advantages_two";
+@import "./components/product-categories";
+@import "./components/express-courier";
+@import "./components/steps-to-order";
+@import "./components/download-app";
+@import "./components/information";
+@import "./components/our-contacts";
+@import "./components/footer";
+
+
+
+// small components
+@import "./components/nav";
+
+
+
+
+// modals
+@import "./components/become-courier-modal";
+@import "./components/become-partner-modal";
+@import "./components/back-call-modal";
+@import "./components/write-to-us-modal";

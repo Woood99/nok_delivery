@@ -1,0 +1,183 @@
+.our-contacts {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media (max-width:$smallTablet){
+         position: relative;
+         z-index: 99; 
+    }
+    &__container {
+        padding-top: 80px;
+        padding-bottom: 160px;
+
+        @media (max-width:$smallTablet) {
+            position: relative;
+            min-height: 590px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        @media (max-width:$mobile){
+             display: flex;
+             justify-content: center; 
+        }
+    }
+
+    &__inner {
+        padding: 20px 17px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 2px solid $whiteColor;
+        backdrop-filter: blur(24px);
+        border-radius: 10px;
+        max-width: 320px;
+
+        @media (max-width:$smallTablet) {
+            position: absolute;
+            bottom: -125px;
+            padding: 17px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: math.div(30, 18);
+        color: #2BC36F;
+        @media (max-width:$mobile){
+             text-align: center; 
+        }
+    }
+
+    &__list {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__btn {
+        margin: 0 auto;
+        margin-top: 20px;
+        display: block;
+        width: 80%;
+        @media (max-width:$mobile){
+             width: 100%; 
+        }
+    }
+}
+
+.our-contacts-item {
+
+    &:not(:first-child) {
+        margin-top: 10px;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        background-color: rgba(43, 195, 111, 0.1);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+
+        flex: 0 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color $transitionSpeed $transitionFunction;
+
+        svg {
+            width: 14px;
+            height: 14px;
+            display: block;
+            fill: #2BC36F;
+            transition: fill $transitionSpeed $transitionFunction;
+        }
+    }
+
+    &__descr {
+        margin-left: 10px;
+        font-size: 14px;
+        line-height: math.div(18, 14);
+        transition: color $transitionSpeed $transitionFunction;
+    }
+
+    &:hover {
+        .our-contacts-item__inner.our-contacts-item__link {
+            .our-contacts-item__icon {
+                // background-color: rgba($tropazSecondaryColor, 0.1);
+
+                // svg {
+                //     fill: $tropazSecondaryColor;
+                // }
+                background-color: #2BC36F;
+
+                svg {
+                    fill: $whiteColor;
+                }
+            }
+
+            .our-contacts-item__descr {
+                // color: $tropazSecondaryColor;
+                color: #2BC36F;
+            }
+
+        }
+    }
+}
+
+.our-contacts-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: math.div(30, 18);
+        color: #2BC36F;
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        &:hover {
+            .social__link {
+                background-color: #2BC36F;
+
+                svg {
+                    fill: $whiteColor;
+                }
+            }
+        }
+    }
+
+    &__link {
+        background-color: $whiteColor;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color $transitionSpeed $transitionFunction;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+            fill: #D4D4D4;
+            transition: fill $transitionSpeed $transitionFunction;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.burger {
+    cursor: pointer;
+    border: none;
+    background-color: $whiteColor;
+    border-radius: 5px;
+    padding: 14px 14px 15px 15px;
+    position: relative;
+    z-index: 1000;
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
+    }
+
+    &__circle {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        background-color: $tropazSecondaryColor;
+        border-radius: 50%;
+
+        &:nth-child(2) {
+            background-color: $greenColor;
+        }
+    }
+
+
+
+
+    &--active {
+
+        .burger__circle {
+            background-color: $tropazSecondaryColor;
+            animation: burger-circle 1s infinite;
+
+            &:nth-child(1) {
+                animation-delay: 0.75s;
+                // 4
+            }
+
+            &:nth-child(2) {
+                background-color: $greenColor;
+                // 1
+            }
+
+            &:nth-child(3) {
+                animation-delay: 0.5s;
+                // 3
+            }
+
+            &:nth-child(4) {
+                animation-delay: 0.25s;
+                // 2
+            }
+        }
+    }
+}
+
+
+@keyframes burger-circle {
+    0% {
+        background-color: $greenColor;
+    }
+
+    100% {
+        background-color: $tropazSecondaryColor;
+    }
+}

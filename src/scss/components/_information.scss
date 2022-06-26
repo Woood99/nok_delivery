@@ -1,0 +1,132 @@
+.information {
+    padding-bottom: 80px;
+
+    @media (max-width:$smallTablet) {
+        padding-bottom: 40px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+
+        @media (max-width:$tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 45px 60px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @media (max-width:$tablet) {
+            min-height: 300px;
+            padding: 30px;
+        }
+
+        @media (max-width:$mobile) {
+            padding: 20px;
+        }
+    }
+}
+
+
+
+.information-item {
+    &::before {
+        content: '';
+        background: linear-gradient(180deg, rgba(166, 166, 166, .6) 0, rgba(0, 0, 0, 0) 100%);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 98;
+        border-radius: 10px;
+
+        transition: filter $transitionSpeed $transitionFunction, background $transitionSpeed $transitionFunction;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 55px;
+        line-height: math.div(65, 55);
+        color: $whiteColor;
+        position: relative;
+        z-index: 99;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+
+        transition: all $transitionSpeed $transitionFunction 0.3s;
+
+        @media (max-width:$tablet) {
+            font-size: 40px;
+        }
+
+        @media (max-width:$mobile) {
+            font-size: 30px;
+        }
+    }
+
+    &--hover {
+        opacity: 0;
+        visibility: hidden;
+
+        font-size: 18px;
+        line-height: math.div(26, 18);
+        color: $whiteColor;
+        position: relative;
+        z-index: 99;
+        transition: opacity $transitionSpeed $transitionFunction, visibility $transitionSpeed $transitionFunction;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        @media (max-width:$mobile) {
+            font-size: 14px;
+        }
+    }
+    &__btn{
+        margin-top: 25px;
+        padding: 14px 45px 13px;
+        @media (max-width:$smallTablet){
+             margin-top: 15px; 
+        }
+    }
+    &:hover {
+        &::before {
+            background: rgba(35, 83, 138, 0.5);
+            filter: blur(10px);
+        }
+
+        .information-item {
+            &--hover {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity $transitionSpeed $transitionFunction 0.3s, visibility $transitionSpeed $transitionFunction 0.3s;
+            }
+
+            &__title {
+                opacity: 0;
+                visibility: hidden;
+                transition: all $transitionSpeed $transitionFunction;
+            }
+        }
+    }
+}
