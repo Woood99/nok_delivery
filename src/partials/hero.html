@@ -16,7 +16,11 @@
             <button type="submit" class="btn btn-reset btn--primary hero__btn">Скачать приложение</button>
         </div>
         <div class="hero__img">
-            <img loading="lazy" src="img/hero-img.png" alt="Картинка">
+            <picture>
+                <source srcset="img/hero-img.avif" type="image/avif">
+                <source srcset="img/hero-img.webp" type="image/webp">
+                <img loading="lazy" src="img/hero-img.png" alt="Картинка">
+            </picture>
         </div>
     </div>
 </section>
